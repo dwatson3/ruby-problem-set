@@ -1,18 +1,23 @@
-answer = rand(1..100)
+computerNum = rand(1..100)
 
-prompt "Tell me a number betweeen 1 to 100"
+prompt "Tell me a number between 1 to 100"
 
 guessNum = gets.chomp_to.i
-
-puts answer
+puts computerNum
 puts input
 
-while guessNum != answer
-	if guessNum < answer
+while guessNum != computerNum
+
+	if guessNum < computerNum
 		puts "Please choose a higher number"
-	elsif guessNum > answer
+		guessNum = gets.chomp.to_i
+	
+	elsif guessNum > computerNum
 		puts "Please choose a lower number"
-	else guessNum == answer
+		guessNum = gets.chomp.to_i	
+
+	else guessNum == computerNum
 		puts "You chose the correct number!"
+	end	
 end			
 
